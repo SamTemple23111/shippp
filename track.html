@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Manage your shipping online and quickly print labels, track packages, and find details about Transporty Logistics Services services that fit your needs...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="irstheme">
+    <title>Track a Shipment | Transporty Logistics Services</title>
+    <base >
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png" type="image/png" sizes="180x180">
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/slick-theme.css" rel="stylesheet">
+    <link href="assets/css/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="code.jquery.com/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="code.jquery.com/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#myModal").modal('show');
+    });
+    </script>
+
+</head><script src="admin/assets/js/barcodegen.min.js"></script>
+<script language="javascript"> 
+	function OpenNew(link) {
+		windowprops='personalbar=no,toolbar=no,'+'status=no,scrollbars=yes,location=no,'+'resizable=yes,menubar=no,width=790,height=590';decimalWin=window.open(link,'printable',windowprops);
+	}
+</script>
+
+<style type="text/css">
+    #containerx {
+        width: 100%;
+        height: auto;
+        border: 1px solid #666666;
+        clear: both;
+        background: #4470b7;
+        color: #ffffff;
+    }
+    #contentarea {
+        width: 100%;
+        border: 1px solid #bbbbbb;
+        margin: 15px 15px 15px 20px;
+        clear: both;
+        background: #003463;
+    }
+    .line {
+        width: 100%;
+        border: 1px solid #ffffff;
+        clear: both;
+        margin-bottom: 20px;
+    }
+    .topline {
+        width: 100%;
+        border: 3px solid #666666;
+        clear: both;
+    }
+    .headbar {
+        width: 141px;
+        background-color: #666666;
+        border: 1px solid #666666;
+        border-bottom: none;
+        color: #fff;
+        float: left;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        font-size-adjust: none;
+        list-style-type: none;
+        list-style-image: none;
+        margin: 0 2px 0 0;
+        padding: 2px 2px 2px 6px;
+        text-decoration: none;
+        clear: both;
+    }
+    .textline {
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        color: #fff;
+    }
+    .dateline {
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        padding-top: 5px;
+        padding-left: 10px;
+        color: white;
+    }
+    .datelineunder {
+        width: 100%;
+        border: 1px solid #bbbbbb;
+        clear: both;
+        margin-left: 10px;
+        color: white;
+    }
+
+    .statusline {
+        padding-top: 5px;
+        padding-right: 180px;
+        padding-bottom: 5px;
+    }
+
+    .delivered {
+        padding-top: 5px;
+        padding-left: 20px;
+        padding-bottom: 5px;
+        font-family: arial;
+        font-size: 20px;
+        color: #00cc00;
+        font-weight: bold;
+    }
+
+    .othline {
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        font-weight: normal;
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        color: white;
+    }
+    .fields {
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        color: white;
+        display: inline;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .fieldx {
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        color: white;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .signature {
+        color: #ffffff;
+        display: inline;
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        margin-left: 130px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    .freightcontent {
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        color: white;
+        padding-left: 5px;
+        padding-bottom: 5px;
+    }
+    .freightline {
+        width: 100%;
+        border: 1px solid #ffffff;
+        clear: both;
+        margin-bottom: 10px;
+    }
+    .facts {
+        padding-left: 0px;
+        padding-bottom: 5px;
+        font-family: arial;
+    }
+    .factline {
+        font-family: arial, sans-serif;
+        font-size: 16px;
+        color: #ffffff;
+        padding-left: 0px;
+        padding-bottom: 5px;
+    }
+    .barcode {
+        width: 100%;
+        clear: both;
+        margin-bottom: 10px;
+        margin-left: 30px;
+    }
+
+    .table {
+        float: left;
+        width: 100%;
+    }
+    table.listing {
+        background: #ffff00;
+        font-family: Tahoma, Arial, verdana;
+        font-size: 16px;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    table.listing th {
+        border-top: 0 !important;
+    }
+
+    table.listing th.full {
+        border-left: 0;
+        border-right: 0 !important;
+        text-align: left;
+        text-transform: uppercase;
+    }
+    /* table styles */
+    table.listing td,
+    table.listing th {
+        text-align: left;
+    }
+    table.listing th {
+        /*background:#9097A9;*/
+        color: #fff;
+        padding: 5px;
+        font: bold 10px/22px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+        color: #4f6b72;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 2px 5px 4px 5px;
+        background: #ffffff;
+        vertical-align: middle;
+    }
+
+    table.listing td {
+        background: #ffffff;
+        color: #000;
+        padding: 3px 5px;
+    }
+    table.listing tr:nth-child(odd) td {
+        background: #000000;
+        color: #fff;
+    }
+    table.listing .white td {
+        background: #fff;
+    }
+
+    table.listing th:first-child {
+        width: 20%;
+        border-left: 0;
+    }
+
+    table.listing th:last-child {
+        width: 30%;
+        border-left: 0;
+    }
+    .printer {
+        font-size: 14px;
+        display: inline;
+        padding-left: 20px;
+        float: right;
+        padding-bottom: 4px;
+        color: #000000;
+        padding-top: 8px;
+        text-decoration: underline;
+    }
+
+    .text {
+        font-family: arial;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: normal;
+        color: #000000;
+        align: justify;
+    }
+
+    pre {
+        font-family: arial;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 14px;
+        color: #ffffff;
+        align: justify;
+    }
+</style>
+
+    <body>
+        <!-- start page-wrapper -->
+        <div class="page-wrapper">
+        <!-- start preloader -->
+        <div class="preloader">
+    <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+    </div>
+</div>        <!-- end preloader -->
+        <header id="header" class="site-header header-style-1">
+    <nav class="navigation navbar navbar-default">
+        <div class="container header-vee">
+            <div class="navbar-header">
+                <button type="button" class="open-btn">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="https://transportyls.com/">
+                    <img src="assets/images/logo.png" width="200" alt="Logo">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
+                <button class="close-navbar">
+                    <i class="ti-close"></i>
+                </button>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="https://transportyls.com/">Home</a>
+                    </li>
+                    <li>
+                        <a href="about">About</a>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">Services</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="warehousing">Warehousing</a>
+                            </li>
+                            <li>
+                                <a href="ocean-freight">Ocean Freight</a>
+                            </li>
+                            <li>
+                                <a href="road-freight">Road Freight</a>
+                            </li>
+                            <li>
+                                <a href="air-freight">Air Freight</a>
+                            </li>
+                            <li>
+                                <a href="packaging">Packaging</a>
+                            </li>
+                        </ul>
+                    </li>              
+                    <li>
+                        <a href="track-shipment">Tracking</a>
+                    </li>                    
+                    <li>
+                        <a href="contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- end of nav-collapse -->
+            <div class="search-contact">
+                <div class="header-search-area">
+                    <div class="header-search-form">
+                        <form action="track-shipment" method="post" class="form">
+                            <div>
+                                <input type="text" name="trackingId" class="form-control" placeholder="Search here">
+                            </div>
+                            <button type="submit" name="trackItem" class="btn">
+                                <i class="ti-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div>
+                        <button class="btn open-btn">
+                            <i class="ti-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="contact">
+                    <a href="https://transportyls.com/#track_trace" class="theme-btn">Track & Trace</a>
+                </div>
+            </div>
+            <div class="separator"></div>
+        </div>
+        <!-- end of container -->
+    </nav>
+</header>    
+        <!-- end of header -->
+        <!-- start page-title -->
+        <section class="page-title">
+            <div class="container">
+                    <div class="row">
+                        <div class="col col-xs-12">
+                            <h2>Track Shipment</h2>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                </div>
+            <!-- end container -->
+        </section>
+        <!-- end page-title -->
+        <!-- start mission-vision-section -->
+       
+        <div style="margin-top:10px;">
+            <div class="headbar">Detailed Results</div>
+            <div class="topline"></div>
+            <div id="containerx">
+                <div id="contentarea">
+                    <div class="textline" style="float:left;width:50%">Tracking no.: JMK678KHMA1</div>
+                    <div style="float:right;width:18%" class="printer">
+                        <a href="waybill.php?id=JMK678KHMA1">Printer Friendly</a>
+                    </div>
+                    <div class="line"></div>
+                    <div class="statusline" style="float:left">
+                                                <img src='images/step4.gif' border='0' align='center' style='width:450px; height:22px'/>
+                    </div>
+                    <div class="othline">
+                        <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                            <tr valign="top">
+                                <td>
+                                    <div class="dateline">Shipment Dates</div>
+                                    <div class="datelineunder"></div><br>
+                                    <div class="fields">Ship date &nbsp;  2023-06-27</div><br>
+                                    <div class="fields">Delivery date &nbsp; 2023-06-27 </div> 
+                                </td>
+                                <td>&nbsp;</td>
+                                <td>
+                                    <div class="dateline">Origin</div>
+                                    <div class="datelineunder"></div><br>
+                                    <div class="fields">Alberta</div>
+                                </td>
+                                <td>&nbsp;</td>
+                                <td>
+                                    <div class="dateline">Destination</div>
+                                    <div class="datelineunder"></div><br>
+                                    <div class="fields">Ontario</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="contentarea">
+                    <div class="textline">Shipment Profile</div>
+                    <div class="freightline"></div>
+                    <div class="othline">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr valign="top">
+                                <td>
+                                    <div class="dateline">Shipper Details</div>
+                                    <div class="datelineunder"></div><br>
+                                    <div class="fields">Brett James</div><br>
+                                    <div class="fieldx">Calgary #520, AB T2V 0H2</div> 
+                                </td>
+                                <td>&nbsp;</td>
+                                <td>
+                                    <div class="dateline">Receiver Details</div>
+                                    <div class="datelineunder"></div><br>
+                                    <div class="fields">Bronwyn Stephens</div><br>
+                                    <div class="fieldx">36 st. George street, St Thomas, ON, N5P2L1</div> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="contentarea">
+                    <div class="textline">Shipment Content / Description</div>
+                    <div class="freightline"></div>
+                    <div class="freightcontent">            
+                        <p>Keys - Security Deposit Receipt - Lease Of Agreement&nbsp;</p>                    </div>
+                </div>
+                <div id="contentarea">
+                    <div class="textline">Shipment Facts</div>
+                    <div class="freightline"></div>
+                    <br />
+                    <div class="freightcontent">
+                        <div class="facts" style="width: 45%; float: left;">
+                            <div class="factline">Service type &nbsp; Express</div>
+                            <div class="factline">Weight &nbsp; 2kg</div>
+                        </div>
+                        <div class="facts" style="width: 47%; float: right;">
+                            <div class="factline">Quantity &nbsp; 3</div>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                </div>
+                <div style="text-align: right; padding-right: 20px">
+                                        <img width="150px" src="uploads/onhold.gif">
+                </div>
+                <div id="contentarea">
+                    <div class="textline">Shipment Travel History</div>
+                    <div class="line"></div><br/>
+                    <div class="factline">All shipment travel activity is displayed here</div>
+                    <div class="table factline">
+                        <table class="listing" cellpadding="0" cellspacing="1">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Activity</th>
+                                    <th>Location</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                                    <tr>
+                                        <td>2023-06-27</td>
+                                        <td>$1,200.00 CAD First Month Rent Fee Requested</td>
+                                        <td width="280">Winnipeg</td>
+                                        <td>Package On Hold</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>2023-06-27</td>
+                                        <td>Package in Transit</td>
+                                        <td width="280">Alberta</td>
+                                        <td>In Transit</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>2023-06-27</td>
+                                        <td>Processing </td>
+                                        <td width="280">Alberta</td>
+                                        <td>Processing</td>
+                                    </tr>
+                                                            </tbody>
+                        </table>
+                    </div>
+                    <br/><br/><br/>
+                    <div class="barcode" align="center">
+                        <svg id="barcode" height="80"></svg>
+                    </div>
+                </div>
+            </div><br/>
+        </div>
+        <!-- start site-footer -->
+        <footer class="site-footer">
+    <div class="upper-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-3 col-md-3 col-sm-6">
+                    <div class="widget about-widget">
+                        <div class="logo widget-title">
+                            <img src="assets/images/logo.png" alt="">
+                        </div>
+                        <p>Logistics industry experts and enthusiasts that are passionate about progressive supply chain solutions worldwide</p>
+                    </div>
+                </div>
+                <div class="col col-lg-9 col-md-9 col-sm-6">
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-3 col-sm-6">
+                            <div class="widget link-widget">
+                                <div class="widget-title">
+                                    <h3>Usefull Links</h3>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="about">About us</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact">Contact us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-3 col-sm-6">
+                            <div class="widget newsletter-widget">
+                                <div class="widget-title">
+                                    <h3>Newsletter</h3>
+                                </div>
+                                <p>You will be notified when somthing new appears here.</p>
+                                <select class="form-control" onchange="doGTranslate(this);">
+                                    <option value="">Select Language</option>
+                                    <option value="en|af">Afrikaans</option>
+                                    <option value="en|sq">Albanian</option>
+                                    <option value="en|ar">Arabic</option>
+                                    <option value="en|hy">Armenian</option>
+                                    <option value="en|az">Azerbaijani</option>
+                                    <option value="en|eu">Basque</option>
+                                    <option value="en|be">Belarusian</option>
+                                    <option value="en|bg">Bulgarian</option>
+                                    <option value="en|ca">Catalan</option>
+                                    <option value="en|zh-CN">Chinese (Simplified)</option>
+                                    <option value="en|zh-TW">Chinese (Traditional)</option>
+                                    <option value="en|hr">Croatian</option>
+                                    <option value="en|cs">Czech</option>
+                                    <option value="en|da">Danish</option>
+                                    <option value="en|nl">Dutch</option>
+                                    <option value="en|en">English</option>
+                                    <option value="en|et">Estonian</option>
+                                    <option value="en|tl">Filipino</option>
+                                    <option value="en|fi">Finnish</option>
+                                    <option value="en|fr">French</option>
+                                    <option value="en|gl">Galician</option>
+                                    <option value="en|ka">Georgian</option>
+                                    <option value="en|de">German</option>
+                                    <option value="en|el">Greek</option>
+                                    <option value="en|ht">Haitian Creole</option>
+                                    <option value="en|iw">Hebrew</option>
+                                    <option value="en|hi">Hindi</option>
+                                    <option value="en|hu">Hungarian</option>
+                                    <option value="en|is">Icelandic</option>
+                                    <option value="en|id">Indonesian</option>
+                                    <option value="en|ga">Irish</option>
+                                    <option value="en|it">Italian</option>
+                                    <option value="en|ja">Japanese</option>
+                                    <option value="en|ko">Korean</option>
+                                    <option value="en|lv">Latvian</option>
+                                    <option value="en|lt">Lithuanian</option>
+                                    <option value="en|mk">Macedonian</option>
+                                    <option value="en|ms">Malay</option>
+                                    <option value="en|mt">Maltese</option>
+                                    <option value="en|no">Norwegian</option>
+                                    <option value="en|fa">Persian</option>
+                                    <option value="en|pl">Polish</option>
+                                    <option value="en|pt">Portuguese</option>
+                                    <option value="en|ro">Romanian</option>
+                                    <option value="en|ru">Russian</option>
+                                    <option value="en|sr">Serbian</option>
+                                    <option value="en|sk">Slovak</option>
+                                    <option value="en|sl">Slovenian</option>
+                                    <option value="en|es">Spanish</option>
+                                    <option value="en|sw">Swahili</option>
+                                    <option value="en|sv">Swedish</option>
+                                    <option value="en|th">Thai</option>
+                                    <option value="en|tr">Turkish</option>
+                                    <option value="en|uk">Ukrainian</option>
+                                    <option value="en|ur">Urdu</option>
+                                    <option value="en|vi">Vietnamese</option>
+                                    <option value="en|cy">Welsh</option>
+                                    <option value="en|yi">Yiddish</option>
+                                </select>
+                                <div style="display: none;" id="google_translate_element2"></div>
+                                <script type="text/javascript">
+                                    function googleTranslateElementInit2() {
+                                        new google.translate.TranslateElement({
+                                            pageLanguage: 'en',
+                                            autoDisplay: true
+                                        }, 'google_translate_element2');
+                                    }
+                                </script>
+                                <script type="text/javascript"
+                                    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2">
+                                </script>
+
+
+                                <script type="text/javascript">
+                                    /* <![CDATA[ */
+                                    eval(function (p, a, c, k, e, r) {
+                                        e = function (c) {
+                                            return (c < a ? '' : e(parseInt(c / a))) + ((c = c %
+                                                a) > 35 ? String.fromCharCode(c + 29) : c
+                                                .toString(36))
+                                        };
+                                        if (!''.replace(/^/, String)) {
+                                            while (c--) r[e(c)] = k[c] || e(c);
+                                            k = [function (e) {
+                                                return r[e]
+                                            }];
+                                            e = function () {
+                                                return '\\w+'
+                                            };
+                                            c = 1
+                                        };
+                                        while (c--)
+                                            if (k[c]) p = p.replace(new RegExp('\\b' + e(c) + '\\b',
+                                                'g'), k[c]);
+                                        return p
+                                    }('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}',
+                                        43, 43,
+                                        '||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'
+                                        .split('|'), 0, {}))
+                                    /* ]]> */
+                                </script>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="partner-footer">
+                            <img class="partner-img" src="assets/images/partners.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end container -->
+    </div>
+    <div class="lower-footer">
+        <div class="container">
+            <div class="row">
+                <div class="separator"></div>
+                <div class="col col-xs-12">
+                    <p class="copyright">Copyright &copy; 2023 Transporty Logistics Services</p>
+                    <p class="copyright">. All rights reserved.</p>
+                    <div class="extra-link">
+                        <ul>
+                            <li>
+                                <a href="privacy-policy">Privacy &amp; Policy</a>
+                            </li>
+                            <li>
+                            </li>
+                            <li>
+                                <a href="about">About us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Smartsupp Live Chat script -->
+<script type="text/javascript">
+var _smartsupp = _smartsupp || {};
+_smartsupp.key = '3e5b29ced2f05d20cf60d0fcb31b9baa94bdf6c4';
+window.smartsupp||(function(d) {
+  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+  c.type='text/javascript';c.charset='utf-8';c.async=true;
+  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
+</script>
+<noscript> Powered by <a href=“https://www.smartsupp.com” target=“_blank”>Smartsupp</a></noscript>        <!-- end site-footer -->
+    </div>
+        <!-- end of page-wrapper -->
+        <script type="text/javascript">
+            JsBarcode("#barcode", "JMK678KHMA1", {
+                width: 2,
+                height: 60
+            });
+        </script>
+        <!-- All JavaScript files ================================================== -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- Plugins for this template -->
+<script src="assets/js/jquery-plugin-collection.js"></script>
+<!-- Custom script for this template -->
+<script src="assets/js/script.js"></script>    </body>
+</html>
